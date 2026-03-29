@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signet Metals Ltd | UK Scrap Metal Exporters</title>
+  <meta name="description" content="Signet Metals Ltd — UK-based exporters of ferrous and non-ferrous scrap metals to global markets. Reliable supply, transparent trading.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson: #8B1A2B;
+      --crimson-deep: #6B1420;
+      --gold: #C9A84C;
+      --gold-light: #E8D48B;
+      --charcoal: #1A1A1A;
+      --warm-white: #FAF9F6;
+      --warm-gray: #F2F0EB;
+      --text-secondary: #5A5A5A;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--charcoal);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: padding 0.3s;
+    }
+
+    nav.scrolled { padding: 10px 40px; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-seal {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #8B1A2B 0%, #6B1420 100%);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-seal span {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 3px;
+    }
+
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--crimson); }
+
+    .nav-cta {
+      background: var(--crimson) !important;
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--crimson-deep) !important; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px 40px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(139,26,43,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; max-width: 720px; }
+
+    .hero-seal {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #8B1A2B 0%, #6B1420 100%);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      box-shadow: 0 4px 24px rgba(139,26,43,0.15);
+    }
+
+    .hero-seal span {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 4px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 6px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .hero-accent {
+      width: 60px;
+      height: 2px;
+      background: var(--crimson);
+      margin: 24px auto;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--crimson);
+      color: #fff;
+      padding: 14px 40px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--crimson-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(139,26,43,0.2);
+    }
+
+    /* ===== ABOUT / WHAT WE DO ===== */
+    .about {
+      padding: 100px 40px;
+      background: var(--warm-gray);
+    }
+
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-left h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .about-left .accent-line {
+      width: 40px;
+      height: 2px;
+      background: var(--crimson);
+      margin-bottom: 24px;
+    }
+
+    .about-left p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .about-card {
+      background: var(--warm-white);
+      padding: 28px 32px;
+      border-radius: 6px;
+      border-left: 3px solid var(--gold);
+      transition: transform 0.2s;
+    }
+
+    .about-card:hover { transform: translateX(4px); }
+
+    .about-card h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .about-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== WHY SIGNET ===== */
+    .why {
+      padding: 100px 40px;
+      background: var(--warm-white);
+    }
+
+    .why-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .why h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .why .accent-line {
+      width: 40px;
+      height: 2px;
+      background: var(--crimson);
+      margin: 0 auto 48px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: left;
+    }
+
+    .why-item {
+      padding: 24px 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .why-item h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      padding: 100px 40px;
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .contact-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-left h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .contact-left .accent-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .contact-left p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-details .detail {
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+
+    .detail-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      min-width: 60px;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .detail-value a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .detail-value a:hover { color: var(--gold); }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .contact-form button {
+      background: var(--crimson);
+      color: #fff;
+      padding: 14px 40px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+
+    .contact-form button:hover {
+      background: var(--crimson-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(139,26,43,0.3);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 32px 40px;
+      background: #111;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 24px 60px; }
+      .hero-seal { width: 90px; height: 90px; }
+      .hero-seal span { font-size: 28px; }
+      .about { padding: 60px 24px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .why { padding: 60px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 24px; }
+      .contact { padding: 60px 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <div class="nav-seal"><span>SM</span></div>
+      <span class="nav-name">SIGNET METALS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-seal"><span>SM</span></div>
+      <h1>SIGNET METALS</h1>
+      <div class="hero-accent"></div>
+      <p>UK-based exporters of ferrous and non-ferrous scrap metals to global markets. Reliable supply, quality assurance, and transparent trading.</p>
+      <a href="#contact" class="hero-cta">Enquire Now</a>
+    </div>
+  </section>
+
+  <!-- About / What We Do -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-left fade-in">
+        <h2>What We Do</h2>
+        <div class="accent-line"></div>
+        <p>Signet Metals Ltd is a UK-registered scrap metal trading company specialising in the export of ferrous and non-ferrous metals to international markets.</p>
+        <p>We operate across the UK–South Asia trade corridor, connecting quality-verified UK scrap supply with established buyers. Our focus is on building long-term partnerships grounded in transparency, grade consistency, and reliable logistics.</p>
+      </div>
+      <div class="about-right fade-in">
+        <div class="about-card">
+          <h3>Ferrous Metals</h3>
+          <p>HMS grades, shredded steel, heavy melting scrap, and alloy steels — sourced from accredited UK suppliers and graded to ISRI specifications.</p>
+        </div>
+        <div class="about-card">
+          <h3>Non-Ferrous Metals</h3>
+          <p>Aluminium, copper, stainless steel, and specialty alloys. Expanding our product range to serve diverse industrial requirements.</p>
+        </div>
+        <div class="about-card">
+          <h3>Logistics & Compliance</h3>
+          <p>End-to-end export management including containerisation, documentation, customs clearance, and full regulatory compliance with UK waste export regulations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Signet -->
+  <section class="why" id="why">
+    <div class="why-inner">
+      <h2>Why Signet Metals</h2>
+      <div class="accent-line"></div>
+      <div class="why-grid fade-in">
+        <div class="why-item">
+          <h3>Grade Integrity</h3>
+          <p>Every shipment graded to ISRI specifications with pre-shipment inspection. No surprises at discharge.</p>
+        </div>
+        <div class="why-item">
+          <h3>Reliable Execution</h3>
+          <p>From purchase order to bill of lading, we manage the full export cycle with precision and clear communication at every stage.</p>
+        </div>
+        <div class="why-item">
+          <h3>UK Regulated</h3>
+          <p>Fully licensed under UK waste regulations with EORI registration, VAT compliance, and Scrap Metal Dealers Act authorisation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left fade-in">
+        <h2>Get in Touch</h2>
+        <div class="accent-line"></div>
+        <p>Whether you're a buyer looking for a reliable UK supply partner or a supplier with material to move, we'd like to hear from you.</p>
+        <div class="contact-details">
+          <div class="detail">
+            <span class="detail-label">Email</span>
+            <span class="detail-value"><a href="mailto:shubham@signetmetals.com">shubham@signetmetals.com</a></span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Address</span>
+            <span class="detail-value">86-90 Paul Street<br>London, EC2A 4NE<br>United Kingdom</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right fade-in">
+        <form class="contact-form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="text" name="company" placeholder="Company">
+          </div>
+          <input type="email" name="email" placeholder="Email address" required>
+          <textarea name="message" placeholder="Tell us about your requirements — materials, volumes, destination..." required></textarea>
+          <button type="submit">Send Enquiry</button>
+          <p class="form-note">We typically respond within 24 hours on business days.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Signet Metals Ltd. Registered in England & Wales. 86-90 Paul Street, London, EC2A 4NE.</p>
+  </footer>
+
+  <script>
+    // Scroll effect for nav
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Simple form handling (no backend needed for GitHub Pages - swap to Formspree)
+    document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+      // If using Formspree, the form will submit normally
+      // If no Formspree ID, prevent default and show confirmation
+      if (this.action.includes('YOUR_FORM_ID')) {
+        e.preventDefault();
+        alert('Thank you for your enquiry. We will be in touch shortly.');
+        this.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
