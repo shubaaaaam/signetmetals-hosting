@@ -597,7 +597,7 @@
           <input type="email" name="email" placeholder="Email address" required>
           <textarea name="message" placeholder="Tell us about your requirements — materials, volumes, destination..." required></textarea>
           <button type="submit">Send Enquiry</button>
-          <p class="form-note">We typically respond within 24 hours on business days.</p>
+          <p class="form-note">We typically respond within 24 hours.</p>
         </form>
       </div>
     </div>
@@ -629,7 +629,7 @@
     document.getElementById('enquiry-form').addEventListener('submit', function(e) {
       // If using Formspree, the form will submit normally
       // If no Formspree ID, prevent default and show confirmation
-      if (this.action.includes('YOUR_FORM_ID')) {
+      if (this.action.includes('mdapeqon')) {
         e.preventDefault();
         alert('Thank you for your enquiry. We will be in touch shortly.');
         this.reset();
